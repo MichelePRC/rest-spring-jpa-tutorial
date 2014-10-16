@@ -9,37 +9,38 @@
 <head>
 <jsp:include page="../tags/includes.jsp" />
 <body>
-	<jsp:include page="../tags/header.jsp" /> 
 	<div class="container">
-	<table class="table">
-	<tr>
-		<th>Id</th>
-		<th>Product</th>
-		<th>Price</th>
-		<th>Quantity</th>
-		<th></th>
-	</tr>
-	<c:if test="${empty items}">
-		<tr>
-			<td colspan="4">No Results found</td>
-		</tr>
-	</c:if>
-	<c:if test="${! empty items}">
-		<c:forEach var="item" items="${items}">
-			<tr>
-				<td><c:out value="${item.id}"></c:out></td>
-				<td><c:out value="${item.product}"></c:out></td>
-				<td><c:out value="${item.price}"></c:out></td>
-				<td><c:out value="${item.quantity}"></c:out></td>
-				<td>&nbsp;<a href="update/${item.id}">Edit</a> &nbsp;&nbsp;<a
-					href="delete/${item.id}">Delete</a>
-				</td>
-			</tr>
-		</c:forEach>
-	</c:if>
-</table>
-</div>
-<jsp:include page="../tags/footer.jsp" />
+		<jsp:include page="../tags/header.jsp" />
 
+		<table class="table">
+			<tr>
+				<th>Id</th>
+				<th>Product</th>
+				<th>Price</th>
+				<th>Quantity</th>
+				<th></th>
+			</tr>
+			<c:if test="${empty items}">
+				<tr>
+					<td colspan="4">No Results found</td>
+				</tr>
+			</c:if>
+			<c:if test="${! empty items}">
+				<c:forEach var="item" items="${items}">
+					<tr>
+						<td><c:out value="${item.id}"></c:out></td>
+						<td><c:out value="${item.product}"></c:out></td>
+						<td><c:out value="${item.price}"></c:out></td>
+						<td><c:out value="${item.quantity}"></c:out></td>
+						<td>&nbsp;<a href="update/${item.id}">Edit</a> &nbsp;&nbsp;<a
+							href="delete/${item.id}">Delete</a>
+						</td>
+					</tr>
+				</c:forEach>
+			</c:if>
+		</table>
+
+		<jsp:include page="../tags/footer.jsp" />
+	</div>
 </body>
 </html>

@@ -7,64 +7,69 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<jsp:include page="../tags/includes.jsp"/> 
+<jsp:include page="../tags/includes.jsp" />
 <body>
-<jsp:include page="../tags/header.jsp"/> 
 	<div class="container">
+		<jsp:include page="../tags/header.jsp" />
 
-			<form:form class="form-horizontal" action="saveItem" method="post"
-				commandName="newItem">
-				<fieldset>
 
-					<!-- Form Name -->
-					<legend>New Item</legend>
+		<form:form class="form-horizontal" action="saveItem" method="post"
+			commandName="newItem">
+			<fieldset>
 
-					<!-- Text input-->
-					<div class="form-group">
-						<label class="col-md-4 control-label" for="product">Product</label>
-						<div class="col-md-5">
-							<input id="product" name="product" type="text"
-								placeholder="Product" class="form-control input-md" required="">
+				<!-- Form Name -->
+				<legend>New Item</legend>
 
-						</div>
+				<!-- Text input-->
+				<div class="form-group">
+					<label class="col-md-4 control-label" for="product">Product</label>
+					<div class="col-md-5">
+						<input id="product" name="product" type="text"
+							placeholder="Product" class="form-control input-md" required="">
+
 					</div>
+				</div>
 
-					<!-- Text input-->
-					<div class="form-group">
-						<label class="col-md-4 control-label" for="price">Price</label>
-						<div class="col-md-5">
-							<input id="price" name="price" type="text" placeholder="Price"
-								class="form-control input-md" required="">
+				<!-- Text input-->
+				<div class="form-group">
+					<label class="col-md-4 control-label" for="price">Price</label>
+					<div class="col-md-5">
+						<input id="price" name="price" type="text" placeholder="Price"
+							class="form-control input-md" required="">
 
-						</div>
 					</div>
+				</div>
 
-					<!-- Text input-->
-					<div class="form-group">
-						<label class="col-md-4 control-label" for="quantity">Quantity</label>
-						<div class="col-md-5">
-							<input id="quantity" name="quantity" type="text"
-								placeholder="Quantity" class="form-control input-md">
+				<!-- Text input-->
+				<div class="form-group">
+					<label class="col-md-4 control-label" for="quantity">Quantity</label>
+					<div class="col-md-5">
+						<input id="quantity" name="quantity" type="text"
+							placeholder="Quantity" class="form-control input-md">
 
-						</div>
 					</div>
+				</div>
 
-					<div class="form-group">
-						<label class="col-md-4 "></label>
-						<div class="col-md-5">
-						<input type="submit" name="" value="Save" class="btn btn-primary"> &nbsp;&nbsp; 
-						<input type="reset" name="" value="Reset" class="btn btn-primary"> &nbsp;&nbsp; 
-						<input type="button" value="Back" onclick="javascript:go('/items/all.html');" class="btn btn-primary">
-						</div>
+				<div class="form-group">
+					<label class="col-md-4 "></label>
+					<div class="col-md-5">
+						<input type="submit" name="" value="Save" class="btn btn-primary">
+						&nbsp;&nbsp; <input type="reset" name="" value="Reset"
+							class="btn btn-primary"> &nbsp;&nbsp; <input
+							type="button" value="Back"
+							onclick="javascript:go('/items/all.html');"
+							class="btn btn-primary">
 					</div>
+				</div>
 
 
-					
 
-				</fieldset>
-			</form:form>
 
-</div>
-	<jsp:include page="../tags/footer.jsp"/> 
+			</fieldset>
+		</form:form>
+
+
+		<jsp:include page="../tags/footer.jsp" />
+	</div>
 </body>
 </html>

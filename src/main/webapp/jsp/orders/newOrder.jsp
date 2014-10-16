@@ -9,8 +9,9 @@
 <head>
 <jsp:include page="../tags/includes.jsp" />
 <body>
-	<jsp:include page="../tags/header.jsp" />
 	<div class="container">
+		<jsp:include page="../tags/header.jsp" />
+
 
 		<form:form class="form-horizontal" action="saveOrder" method="post"
 			commandName="newOrder">
@@ -40,7 +41,7 @@
 				</div>
 
 				<div class="form-group ">
-				<label class="col-md-4 control-label" for="reference">Items</label>
+					<label class="col-md-4 control-label" for="reference">Items</label>
 					<table class="table" style="width: 40%;">
 						<tr>
 							<th>Id</th>
@@ -61,13 +62,14 @@
 									<td><c:out value="${item.product}"></c:out></td>
 									<td><c:out value="${item.price}"></c:out></td>
 									<td><c:out value="${item.quantity}"></c:out></td>
-									<td><input type="checkbox" value="${item.id}" id="itemId" name="itemId"></td>
+									<td><input type="checkbox" value="${item.id}" id="itemId"
+										name="itemId"></td>
 								</tr>
 							</c:forEach>
 						</c:if>
 					</table>
-					</div>
-				
+				</div>
+
 
 
 
@@ -76,8 +78,9 @@
 					<div class="col-md-5">
 						<input type="submit" name="" value="Save" class="btn btn-primary">
 						&nbsp;&nbsp; <input type="reset" name="" value="Reset"
-							class="btn btn-primary"> &nbsp;&nbsp; 
-					<a href="<%=request.getContextPath() %>/orders/all.html" class="btn btn-primary"> Back</a>
+							class="btn btn-primary"> &nbsp;&nbsp; <a
+							href="<%=request.getContextPath()%>/orders/all.html"
+							class="btn btn-primary"> Back</a>
 					</div>
 				</div>
 
@@ -87,7 +90,8 @@
 			</fieldset>
 		</form:form>
 
+
+		<jsp:include page="../tags/footer.jsp" />
 	</div>
-	<jsp:include page="../tags/footer.jsp" />
 </body>
 </html>
