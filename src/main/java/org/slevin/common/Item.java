@@ -6,6 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
+import org.codehaus.jackson.annotate.JsonIgnore;
 import org.slevin.common.Order;
 
 import javax.xml.bind.annotation.XmlRootElement;  
@@ -24,6 +25,7 @@ public class Item {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long id;
 	
+	@JsonIgnore
 	@ManyToOne
 	private Order order;
 
