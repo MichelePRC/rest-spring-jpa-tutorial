@@ -9,89 +9,93 @@
 <head>
 <jsp:include page="../tags/includes.jsp" />
 <body>
-	<div class="container">
-		<jsp:include page="../tags/header.jsp" />
 
+	<jsp:include page="../tags/header.jsp" />
+	<div class="main">
+		<div class="container tim-container"
+			style="max-width: 800px; padding-top: 100px; min-height: 510px;">
 
-		<form:form class="form-horizontal" action="saveOrder" method="post"
-			commandName="newOrder">
-			<fieldset>
+			<form:form class="form-horizontal" action="saveOrder" method="post"
+				commandName="newOrder">
+				<fieldset>
 
-				<!-- Form Name -->
-				<legend>New Order</legend>
+					<!-- Form Name -->
+					<legend>New Order</legend>
 
-				<!-- Text input-->
-				<div class="form-group">
-					<label class="col-md-4 control-label" for="customer">Customer</label>
-					<div class="col-md-5">
-						<input id="customer" name="customer" type="text"
-							placeholder="Customer" class="form-control input-md" required="">
+					<!-- Text input-->
+					<div class="form-group">
+						<label class="col-md-4 control-label" for="customer">Customer</label>
+						<div class="col-md-5">
+							<input id="customer" name="customer" type="text"
+								placeholder="Customer" class="form-control input-md" required="">
 
+						</div>
 					</div>
-				</div>
 
-				<!-- Text input-->
-				<div class="form-group">
-					<label class="col-md-4 control-label" for="reference">Reference</label>
-					<div class="col-md-5">
-						<input id="reference" name="reference" type="text"
-							placeholder="Reference" class="form-control input-md" required="">
+					<!-- Text input-->
+					<div class="form-group">
+						<label class="col-md-4 control-label" for="reference">Reference</label>
+						<div class="col-md-5">
+							<input id="reference" name="reference" type="text"
+								placeholder="Reference" class="form-control input-md"
+								required="">
 
+						</div>
 					</div>
-				</div>
 
-				<div class="form-group ">
-					<label class="col-md-4 control-label" for="reference">Items</label>
-					<table class="table" style="width: 40%;">
-						<tr>
-							<th>Id</th>
-							<th>Product</th>
-							<th>Price</th>
-							<th>Quantity</th>
-							<th></th>
-						</tr>
-						<c:if test="${empty items}">
+					<div class="form-group ">
+						<label class="col-md-4 control-label" for="reference">Items</label>
+						<table class="table" style="width: 40%;">
 							<tr>
-								<td colspan="4">No Results found</td>
+								<th>Id</th>
+								<th>Product</th>
+								<th>Price</th>
+								<th>Quantity</th>
+								<th></th>
 							</tr>
-						</c:if>
-						<c:if test="${! empty items}">
-							<c:forEach var="item" items="${items}">
+							<c:if test="${empty items}">
 								<tr>
-									<td><c:out value="${item.id}"></c:out></td>
-									<td><c:out value="${item.product}"></c:out></td>
-									<td><c:out value="${item.price}"></c:out></td>
-									<td><c:out value="${item.quantity}"></c:out></td>
-									<td><input type="checkbox" value="${item.id}" id="itemId"
-										name="itemId"></td>
+									<td colspan="4">No Results found</td>
 								</tr>
-							</c:forEach>
-						</c:if>
-					</table>
-				</div>
-
-
-
-
-				<div class="form-group">
-					<label class="col-md-4 "></label>
-					<div class="col-md-5">
-						<input type="submit" name="" value="Save" class="btn btn-primary">
-						&nbsp;&nbsp; <input type="reset" name="" value="Reset"
-							class="btn btn-primary"> &nbsp;&nbsp; <a
-							href="<%=request.getContextPath()%>/orders/all.html"
-							class="btn btn-primary"> Back</a>
+							</c:if>
+							<c:if test="${! empty items}">
+								<c:forEach var="item" items="${items}">
+									<tr>
+										<td><c:out value="${item.id}"></c:out></td>
+										<td><c:out value="${item.product}"></c:out></td>
+										<td><c:out value="${item.price}"></c:out></td>
+										<td><c:out value="${item.quantity}"></c:out></td>
+										<td><input type="checkbox" value="${item.id}" id="itemId"
+											name="itemId"></td>
+									</tr>
+								</c:forEach>
+							</c:if>
+						</table>
 					</div>
-				</div>
 
 
 
 
-			</fieldset>
-		</form:form>
+					<div class="form-group">
+						<label class="col-md-4 "></label>
+						<div class="col-md-5">
+							<input type="submit" name="" value="Save" class="btn btn-fill btn-success">
+							&nbsp;&nbsp; <input type="reset" name="" value="Reset"
+								class="btn btn-fill btn-primary"> &nbsp;&nbsp; <a
+								href="<%=request.getContextPath()%>/orders/all.html"
+								class="btn btn-fill btn-warning"> Back</a>
+						</div>
+					</div>
 
 
-		<jsp:include page="../tags/footer.jsp" />
+
+
+				</fieldset>
+			</form:form>
+		</div>
 	</div>
+
+	<jsp:include page="../tags/footer.jsp" />
+
 </body>
 </html>

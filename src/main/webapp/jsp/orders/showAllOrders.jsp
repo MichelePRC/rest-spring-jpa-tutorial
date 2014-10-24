@@ -9,38 +9,41 @@
 <head>
 <jsp:include page="../tags/includes.jsp" />
 <body>
-	<div class="container">
-		<jsp:include page="../tags/header.jsp" />
 
-		<table class="table">
-			<tr>
-				<th>Id</th>
-				<th>Customer</th>
-				<th>Reference</th>
-				<th>OrderDate</th>
-				<th></th>
-			</tr>
-			<c:if test="${empty orders}">
+	<jsp:include page="../tags/header.jsp" />
+	<div class="main">
+		<div class="container tim-container"
+			style="max-width: 800px; padding-top: 100px; min-height: 510px;">
+			<table class="table">
 				<tr>
-					<td colspan="4">No Results found</td>
+					<th>Id</th>
+					<th>Customer</th>
+					<th>Reference</th>
+					<th>OrderDate</th>
+					<th></th>
 				</tr>
-			</c:if>
-			<c:if test="${! empty orders}">
-				<c:forEach var="order" items="${orders}">
+				<c:if test="${empty orders}">
 					<tr>
-						<td><c:out value="${order.id}"></c:out></td>
-						<td><c:out value="${order.customer}"></c:out></td>
-						<td><c:out value="${order.reference}"></c:out></td>
-						<td><c:out value="${order.orderDate}"></c:out></td>
-						<td>&nbsp;<a href="update/${order.id}">Edit</a> &nbsp;&nbsp;<a
-							href="delete/${order.id}">Delete</a>
-						</td>
+						<td colspan="4">No Results found</td>
 					</tr>
-				</c:forEach>
-			</c:if>
-		</table>
-
-		<jsp:include page="../tags/footer.jsp" />
+				</c:if>
+				<c:if test="${! empty orders}">
+					<c:forEach var="order" items="${orders}">
+						<tr>
+							<td><c:out value="${order.id}"></c:out></td>
+							<td><c:out value="${order.customer}"></c:out></td>
+							<td><c:out value="${order.reference}"></c:out></td>
+							<td><c:out value="${order.orderDate}"></c:out></td>
+							<td>&nbsp;<a href="update/${order.id}">Edit</a> &nbsp;&nbsp;<a
+								href="delete/${order.id}">Delete</a>
+							</td>
+						</tr>
+					</c:forEach>
+				</c:if>
+			</table>
+		</div>
 	</div>
+	<jsp:include page="../tags/footer.jsp" />
+
 </body>
 </html>

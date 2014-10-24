@@ -9,15 +9,21 @@
 <head>
 <jsp:include page="./tags/includes.jsp" />
 <body>
-	<div class="container">
 	
 		<jsp:include page="./tags/header.jsp" />
 
-		<div class="well well-lg">
-			<h1>Spring integration with Restful services and JPA</h1>
-		</div>
+<div class="main">
+    <div class="container tim-container" style="max-width:800px; padding-top:100px;min-height:510px;">
+       <h1 class="text-center">Tutorial and examples <br> <small class="subtitle">Using Spring MVC and Restful Services.</small></h1>
+       <p>At the end of this tutorial, you will understand why Spring's simplicity is so powerfull... Make sure you have all the dependencies installed in your enviroment to start the demo... feel free to share it with your friend or use in the field... </p>
+   <!--     end extras -->        
+    </div>
+    <div class="space"></div>
+<!-- end container -->
+</div>
+<!-- end main -->
 
-		<jsp:include page="./tags/footer.jsp" />
-	</div>
+<jsp:include page="./tags/footer.jsp" />
+
 </body>
 </html>
