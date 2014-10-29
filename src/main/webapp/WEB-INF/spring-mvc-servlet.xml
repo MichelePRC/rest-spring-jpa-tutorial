@@ -12,8 +12,9 @@
 			http://www.springframework.org/schema/mvc 
 			http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
 
-	<!-- Scan for all of Spring components such as Spring Service -->
-	<context:component-scan base-package="org.slevin" />
+	<!-- Scan for web components such as Spring Controller -->
+	<context:component-scan base-package="org.slevin.controller" />
+	
 	<!-- Activate MVC annotation -->
 	<mvc:annotation-driven />
 
@@ -24,8 +25,6 @@
 		up static resources in the ${webappRoot}/resources directory -->
 	<mvc:resources mapping="/resources/**" location="/resources/" />
 
-		<!-- Import other application context -->
-		<import resource="classpath:META-INF/spring/applicationContext-*.xml" />
 
 		<!-- Message Bundles -->
 
